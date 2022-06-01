@@ -1,0 +1,10 @@
+### Packer ###
+packer/overrides.auto.pkrvars.hcl
+
+### Terraform ###
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfplan*
+crash.log
