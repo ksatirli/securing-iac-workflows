@@ -1,0 +1,34 @@
+---
+name: "Documentation: terraform-docs"
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+
+    strategy:
+      # see https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstrategyfail-fast
+      fail-fast: false
+      matrix:
+        workspaces:
+          - "terraform-cloud"
+          - "vault-deployment"
+          - "vault-config"
+          - "packer-registry"
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - name: Render documentation for Workspace and push changes back to branch
+        uses: terraform-docs/gh-actions@v0.11.0
+        with:
+          config-file: "../.terraform-docs.yml"
+          output-file: "README.md"
+          output-method: inject
+          git-push: true
+          working-dir: "./${{ matrix.workspaces }}"
