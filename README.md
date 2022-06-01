@@ -1,6 +1,6 @@
 # Securing Infrastructure as Code Workflows
 
-> This repository showcases how to secure IaC workflows using HashiCorp Cloud offerings HCP Vault and HCP Packer
+> This repository showcases how to secure IaC workflows using HashiCorp Cloud offerings HCP Vault and HCP Packer.
 
 ## Table of Contents
 
@@ -16,10 +16,10 @@
 This repository deploys several Terraform Cloud Workspaces, a HashiCorp Cloud Platform (HCP) Vault Cluster, and a HashiCorp Packer Registry.
 
 - The [terraform-cloud](./terraform-cloud/) workflow creates a HashiCorp Virtual Network (HVN) and deploys an HCP Vault Cluster.
-- The [vault-deployment](/vault-deployment/) workflow creates a HashiCorp Virtual Network (HVN) and deploys an HCP Vault Cluster.
-- The [vault-config](/vault-config/)  workflow configures Vault and enables AWS credential vending.
-- The [packer](/packer/)  workflow creates an EC2 AMI with Packer and stores metadata in HCP Packer.
-- The [packer-registry](/packer-registry/)  workflow consumes HCP Packer metadata and deploys an EC2 Instance.
+- The [vault-deployment](./vault-deployment/) workflow creates a HashiCorp Virtual Network (HVN) and deploys an HCP Vault Cluster.
+- The [vault-config](./vault-config/)  workflow configures Vault and enables AWS credential vending.
+- The [packer](./packer/)  workflow creates an EC2 AMI with Packer and stores metadata in HCP Packer.
+- The [packer-registry](./packer-registry/)  workflow consumes HCP Packer metadata and deploys an EC2 Instance.
 
 ## Requirements
 
